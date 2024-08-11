@@ -128,9 +128,14 @@ input:focus-visible {
 .todo-list .down-btn img {
   width: 1em;
 }
+
+.todo-list .add-btn {
+  color: #b4befe;
+}
 .todo-list .del-btn {
   margin-left: 1em;
   font-size: 0.9em;
+  color: #eba0ac;
 }
 
 @media screen and (max-width: 500px) {
