@@ -1,9 +1,9 @@
+import TodoList from "./TodoList.jsx"
+
 function App() {
 
   return (
-    <div>
-
-    </div>
+    <TodoList />
   )
 }
 

@@ -6,11 +6,6 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -25,7 +20,9 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -52,6 +49,76 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+input {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: text;
+  transition: border-color 0.25s;
+}
+input:hover {
+  border-color: #646cff;
+}
+input:focus,
+input:focus-visible {
+  outline: 1px auto -webkit-focus-ring-color;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.todo-list .mod-tasks {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.todo-list h1 {
+  align-self: center;
+}
+
+.todo-list ol {
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1em;
+}
+.todo-list ol li {
+  font-size: 1.2em; 
+}
+
+.todo-list .up-btn {
+  margin-left: 2em;
+}
+.todo-list .down-btn {
+  margin-left: 1em;
+}
+.todo-list .up-btn,
+.todo-list .down-btn {
+  font-size: 0.9em;
+  padding: 0.6em 0.6em;
+}
+.todo-list .up-btn img,
+.todo-list .down-btn img {
+  width: 1em;
+}
+.todo-list .del-btn {
+  margin-left: 1em;
+  font-size: 0.9em;
 }
 
 @media (prefers-color-scheme: light) {
