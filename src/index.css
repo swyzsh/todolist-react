@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #121212;
 }
 
 a {
@@ -18,13 +18,15 @@ a:hover {
 }
 
 body {
-  margin: 0;
+  margin: 1em 2em;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  width: calc(100vw - 4em);
+  min-height: calc(100vh - 2em);
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 h1 {
@@ -90,15 +92,25 @@ input:focus-visible {
 }
 
 .todo-list ol {
+  width: 100%;
   font-size: 1em;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   gap: 1em;
+  padding: 0;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: wrap;
 }
 .todo-list ol li {
   font-size: 1.2em; 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.todo-list .task-text {
+  flex: 1;
+  text-align: start;
 }
 
 .todo-list .up-btn {
@@ -110,7 +122,7 @@ input:focus-visible {
 .todo-list .up-btn,
 .todo-list .down-btn {
   font-size: 0.9em;
-  padding: 0.6em 0.6em;
+  padding: 0.6em 0.8em;
 }
 .todo-list .up-btn img,
 .todo-list .down-btn img {
@@ -121,15 +133,40 @@ input:focus-visible {
   font-size: 0.9em;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@media screen and (max-width: 500px) {
+  body {
+    margin: 1em 3em;
+    width: calc(100vw - 6em);
+    min-height: calc(100vh - 2em);
   }
-  a:hover {
-    color: #747bff;
+  
+  h1 {
+    font-size: 2.4em;
+    line-height: 1;
   }
+
   button {
-    background-color: #f9f9f9;
+    padding: 0.4em 0.8em;
+    font-size: 0.9em;
+  }
+
+  input {
+    padding: 0.4em 0.8em;
+    font-size: 0.9em;
+  }
+
+  .todo-list ol {
+    font-size: 0.9em;
+  }
+  .todo-list ol li {
+    font-size: 1em; 
+  }
+  .todo-list .task-text {
+    flex: 1;
+    text-align: start;
+  }
+
+  .todo-list .up-btn {
+    margin-left: 1.2em;
   }
 }
